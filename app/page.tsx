@@ -61,6 +61,12 @@ export default function Home() {
             link="/earthquake"
             highlight={true}
           />
+          <DemoCard
+            title="8. 🌫️ Air Quality Dashboard with Timeline"
+            description="Interactive air quality visualization with historical playback (7-30 days), heatmap overlay, and detailed pollutant tracking across 50+ cities worldwide. Features animated timeline for exploring pollution patterns over time."
+            link="/airquality"
+            highlight={true}
+          />
         </div>
       </div>
 
