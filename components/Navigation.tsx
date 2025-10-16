@@ -11,6 +11,7 @@ const demos = [
   { name: "Markers", path: "/markers" },
   { name: "Zoom & Pan", path: "/zoom" },
   { name: "Projections", path: "/projections" },
+  { name: "🌍 Earthquakes", path: "/earthquake" },
 ];
 
 export default function Navigation() {

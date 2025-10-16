@@ -55,6 +55,12 @@ export default function Home() {
             description="Explore different map projection types and understand how they change the map appearance."
             link="/projections"
           />
+          <DemoCard
+            title="7. 🌍 Real-Time Earthquake Dashboard"
+            description="Live earthquake data from USGS with interactive filtering, statistics, and detailed earthquake information. Showcases real-world API integration."
+            link="/earthquake"
+            highlight={true}
+          />
         </div>
       </div>
 
@@ -74,35 +80,62 @@ function DemoCard({
   title,
   description,
   link,
+  highlight = false,
 }: {
   title: string;
   description: string;
   link: string;
+  highlight?: boolean;
 }) {
   return (
     <Link href={link}>
       <div
         style={{
           padding: "20px",
-          background: "white",
-          border: "2px solid #e0e0e0",
+          background: highlight ? "#fff3e0" : "white",
+          border: highlight ? "2px solid #ff9800" : "2px solid #e0e0e0",
           borderRadius: "8px",
           cursor: "pointer",
           transition: "all 0.3s",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.borderColor = "#007bff";
-          e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 123, 255, 0.2)";
+          e.currentTarget.style.borderColor = highlight ? "#ff9800" : "#007bff";
+          e.currentTarget.style.boxShadow = highlight
+            ? "0 4px 12px rgba(255, 152, 0, 0.3)"
+            : "0 4px 12px rgba(0, 123, 255, 0.2)";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.borderColor = "#e0e0e0";
+          e.currentTarget.style.borderColor = highlight ? "#ff9800" : "#e0e0e0";
           e.currentTarget.style.boxShadow = "none";
         }}
       >
-        <h3 style={{ marginBottom: "10px", color: "#007bff" }}>{title}</h3>
+        <h3
+          style={{
+            marginBottom: "10px",
+            color: highlight ? "#e65100" : "#007bff",
+          }}
+        >
+          {title}
+        </h3>
         <p style={{ margin: 0, color: "#666", lineHeight: "1.6" }}>
           {description}
         </p>
+        {highlight && (
+          <div
+            style={{
+              marginTop: "10px",
+              padding: "4px 8px",
+              background: "#ff9800",
+              color: "white",
+              borderRadius: "4px",
+              fontSize: "12px",
+              fontWeight: "bold",
+              display: "inline-block",
+            }}
+          >
+            NEW - Real-World Data
+          </div>
+        )}
       </div>
     </Link>
   );
