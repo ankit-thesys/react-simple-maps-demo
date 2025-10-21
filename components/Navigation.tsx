@@ -12,6 +12,7 @@ const demos = [
   { name: "Zoom & Pan", path: "/zoom" },
   { name: "Projections", path: "/projections" },
   { name: "🌍 Earthquakes", path: "/earthquake" },
+  { name: "🌡️ Population Density", path: "/population-density" },
 ];
 
 export default function Navigation() {
